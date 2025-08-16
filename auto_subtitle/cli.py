@@ -61,7 +61,7 @@ def main():
 
         video = ffmpeg.input(path)
         audio = video.audio
-        srt_path = srt_path.replace("\\", "\\\\").replace(":", "\\:")
+        srt_path = srt_path.replace("\\", "\\\\\\").replace(":", "\\\\\:")
         print(srt_path)
         print(os.path.exists(srt_path))
         ffmpeg.concat(
