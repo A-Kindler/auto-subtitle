@@ -61,14 +61,22 @@ def main():
 
         video = ffmpeg.input(path)
         audio = video.audio
-        srt_path = srt_path.replace("\\", "\\\\").replace(":", "\\\:")
+        srt_path = srt_path.replace("\\", "\\\\\\\\").replace(":", "\\\\\:"))
         print(srt_path)
-        print(os.path.exists(srt_path))
-        
+        import subprocess
 
-        ffmpeg.concat(
-            video.filter('subtitles', srt_path, force_style="OutlineColour=&H40000000,BorderStyle=3"), audio, v=1, a=1
-        ).output(out_path).run(quiet=True, overwrite_output=True)
+        cmd = [
+            "ffmpeg",
+            "-i", "C:/Users/Ansgar/Desktop/final/final_video.mp4",
+            "-vf", srt_path,
+            "C:/Users/Ansgar/Desktop/final/output.mp4"
+        ]
+
+        subprocess.run(cmd, check=True)
+
+        # ffmpeg.concat(
+        #     video.filter('subtitles', srt_path, force_style="OutlineColour=&H40000000,BorderStyle=3"), audio, v=1, a=1
+        # ).output(out_path).run(quiet=True, overwrite_output=True)
 
         print(f"Saved subtitled video to {os.path.abspath(out_path)}.")
 
