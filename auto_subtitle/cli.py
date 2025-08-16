@@ -62,6 +62,7 @@ def main():
         video = ffmpeg.input(path)
         audio = video.audio
         srt_path = srt_path.replace("\\", "/").replace(":", r"\:")
+        print(srt_path)
         ffmpeg.concat(
             video.filter('subtitles', srt_path, force_style="OutlineColour=&H40000000,BorderStyle=3"), audio, v=1, a=1
         ).output(out_path).run(quiet=True, overwrite_output=True)
