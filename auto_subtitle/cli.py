@@ -70,7 +70,7 @@ def main():
         cmd = [
             "ffmpeg",
             "-i", "C:/Users/Ansgar/Desktop/final/final_video.mp4",
-            "-vf", srt_path,
+            "-vf", f"subtitles={srt_path}",
             "C:/Users/Ansgar/Desktop/final/output.mp4"
         ]
 
