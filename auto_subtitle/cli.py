@@ -70,8 +70,7 @@ def main():
         cmd = [
             "ffmpeg",
             "-i", "C:/Users/Ansgar/Desktop/final/final_video.mp4",
-            "-vf", "subtitles=C:/Users/Ansgar/Desktop/final/subtitled/final_video.srt:force_style='FontName=Arial'"
-,
+            "-vf", "subtitles=C:/Users/Ansgar/Desktop/final/subtitled/final_video.srt:force_style='FontName=Arial'",
             "C:/Users/Ansgar/Desktop/final/output.mp4"
         ]
 
