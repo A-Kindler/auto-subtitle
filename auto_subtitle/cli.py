@@ -62,7 +62,7 @@ def main():
 
         video = ffmpeg.input(path)
         audio = video.audio
-        print(srt_path)
+        srt_path = "C:/Users/Ansgar/Desktop/final/subtitled/final_video.srt"
 
 
         print(srt_path)
