@@ -54,7 +54,7 @@ def main():
     if srt_only:
         return
 
-    for path, srt_path in subtitles.items():
+    for path, srt_path in subtitles.items():        
         out_path = os.path.join(output_dir, f"{filename(path)}.mp4")
 
         print(f"Adding subtitles to {filename(path)}...")
@@ -102,6 +102,7 @@ def get_subtitles(audio_paths: list, output_srt: bool, output_dir: str, transcri
 
         warnings.filterwarnings("ignore")
         result = transcribe(audio_path)
+        print(result)
         warnings.filterwarnings("default")
 
         with open(srt_path, "w", encoding="utf-8") as srt:
