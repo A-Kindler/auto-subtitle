@@ -62,7 +62,7 @@ def main():
 
         video = ffmpeg.input(path)
         audio = video.audio
-        srt_path = srt_path.replace("\\", "\\\\").replace(":", "\\\:").replace("\\\\:","\\\:")
+        srt_path = srt_path.replace(":", "\\\:").replace("\\:",":").replace("\\", "\\\\")
         print(srt_path)
 
         cmd = [
