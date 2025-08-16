@@ -64,8 +64,7 @@ def main():
         audio = video.audio
         print(srt_path)
 
-        srt_path = srt_path.replace(":", "\\\:").replace("\\\:",":").replace("\\", "\\\\")
-        srt_path = "C\\hallo "+srt_path
+
         print(srt_path)
 
         cmd = [
