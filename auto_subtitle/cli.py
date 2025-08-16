@@ -5,6 +5,7 @@ import argparse
 import warnings
 import tempfile
 from .utils import filename, str2bool, write_srt
+import subprocess
 
 
 def main():
@@ -61,9 +62,8 @@ def main():
 
         video = ffmpeg.input(path)
         audio = video.audio
-        srt_path = srt_path.replace("\\", "\\\\").replace(":", "\\\:")
+        srt_path = srt_path.replace("\\", "\\\\").replace(":", "\\:")
         print(srt_path)
-        import subprocess
 
         cmd = [
             "ffmpeg",
