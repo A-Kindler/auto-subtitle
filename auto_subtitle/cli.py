@@ -61,7 +61,8 @@ def main():
 
         video = ffmpeg.input(path)
         audio = video.audio
-        srt_path = "C\\\:\\\\Users\\\\Ansgar\\\\AppData\\\\Local\\\\Temp\\\\final_video.srt"
+        srt_path = "C:/Users/AppData/Local/Temp/final_video.srt"
+
         print(srt_path)
         print(os.path.exists(srt_path))
         ffmpeg.concat(
